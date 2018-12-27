@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+<div style="col-md-4">
+  <br>
+<div class="form-group holder">
+	<input type="text" class="form-control" placeholder="select Name" name="CustomerID" [(ngModel)]="customerName" (click)="HideShow()">
+                  <div *ngIf="flagDiv" class="dropdown ">
+                    <a href="javascript:void(0)" (click)="HideShow()" class="float-right">[X]</a>
+                    <table class="table table-bordered pointer" style="width:600px;">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Age</th>
+                          <th>Designation</th>
+                          <th>Address</th>
+                        </tr>
+                      </thead>
+                      <tbody >
+                        <tr *ngFor="let char of characters; let i = index" (click)="selectCompany(char)" class="pointer">
+                            <td style="display:none;">{{char.id}}</td>
+                          <td >{{char.name}}</td>
+                          <td>{{char.age}}</td>
+                          <td>{{char.designation}}</td>
+                          <td>{{char.address}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+</div>
+  </div>
+</div>
+
+
+
